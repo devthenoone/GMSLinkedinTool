@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Post Date Extractor</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 2em;
+      width: 350px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      text-align: center;
+    }
+
+    .glass-box h2 {
+      margin-bottom: 1em;
+      font-weight: 500;
+    }
+
+    .glass-box label,
+    .glass-box input,
+    .glass-box button {
+      display: block;
+      width: 100%;
+      margin: 0.5em 0;
+    }
+
+    input[type="text"] {
+      padding: 0.6em;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 0.6em;
+      margin-top: 0.3em;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .output {
+      margin-top: 1.5em;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript" src="./extractor.js"></script>
+
+  <div class="glass-box">
+    <h2>LinkedIn Post Date Extractor</h2>
+    <label for="url">Post URL:</label>
+    <input type="text" id="url" name="url" placeholder="Paste LinkedIn post URL here" />
+    <button onclick="getDate()">Get Uploaded Date</button>
+    <button onclick="clearUrlField()">Clear URL</button>
+
+    <div class="output">
+      <p><strong>Uploaded on:</strong> <span id="localtime"></span></p>
+      <p><strong>UTC:</strong> <span id="date"></span></p>
+    </div>
+  </div>
+</body>
+</html>
